@@ -1,0 +1,33 @@
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+button{
+  background-color: black;
+  color: aliceblue;
+}
+li{
+  float: left;
+  margin-right: 2em;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 2em;
+}
+body {
+    background-color: transparent;
+} 
+

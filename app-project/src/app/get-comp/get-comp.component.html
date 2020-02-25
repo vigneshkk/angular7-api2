@@ -1,0 +1,53 @@
+<body>
+<h1>BOOKS LIST</h1>
+<ul>
+  <li class="mat-input">
+      <mat-form-field class="lion">
+        <mat-label>Search Here</mat-label>
+          <input matInput type="search" #searchin (keyup)="applyFilter($event)" placeholder="Search...">
+      </mat-form-field>
+  </li>
+  <li class="mat-but">
+      <a mat-raised-button (click)="openDialog()">Add Book</a>
+  </li>
+</ul>
+<br>
+<br>
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- ISBN Column -->
+      <ng-container matColumnDef="isbn">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header> ISBN </th>
+        <td mat-cell *matCellDef="let row"> {{row.isbn}} </td>
+      </ng-container>
+  
+      <!-- Book_name Column -->
+      <ng-container matColumnDef="book_name">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header> BOOK NAME </th>
+        <td mat-cell *matCellDef="let row"> {{row.book_name}} </td>
+      </ng-container>
+  
+      <!-- Author Column -->
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header> AUTHOR </th>
+        <td mat-cell *matCellDef="let row"> {{row.author}} </td>
+      </ng-container>
+  
+      <!-- actual copies Column -->
+      <ng-container matColumnDef="no_of_actual_copies">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header> ACTUAL COPIES </th>
+        <td mat-cell *matCellDef="let row" > {{row.no_of_actual_copies}} </td>
+      </ng-container>
+
+      <!-- current copies Column -->
+      <ng-container matColumnDef="no_of_cuurent_copies">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header> CURRENT COPIES </th>
+        <td mat-cell *matCellDef="let row"> {{row.no_of_cuurent_copies}} </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div> 
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</body>

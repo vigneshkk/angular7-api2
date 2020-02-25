@@ -1,0 +1,77 @@
+<body>
+  <br>
+  <br>
+<div  class="example-container">
+<h1 style="font-family: cursive;text-align: center;">Add your Book</h1>
+<ul>
+  <li>
+<form [formGroup]="book"  (ngSubmit)="onSubmit()" class="example-form">
+  <mat-form-field  appearance="fill">
+    <mat-label>ISBN</mat-label>
+    <input matInput type="text" formControlName="isbn" /><br>
+    <mat-error *ngIf="book.controls['isbn'].hasError('maxlength')">
+      Maximun Length is <strong>4</strong>
+    </mat-error>
+    <mat-error *ngIf="book.get('isbn').errors?.required">
+      ISBN is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field  appearance="fill">
+    <mat-label>BOOK NAME</mat-label>
+    <input matInput type="text" formControlName="book_name"/><br>
+    <mat-error *ngIf="book.controls['book_name'].errors?.minlength"> 
+      Minimun Length is <strong>2</strong>
+    </mat-error>
+    <mat-error *ngIf="book.controls['book_name'].errors?.required">
+      Book Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field  appearance="fill">
+    <mat-label>AUTHOR</mat-label>
+    <input matInput type="text" formControlName="author" /><br>
+    <mat-error *ngIf="book.controls['author'].hasError('required')">
+      Author is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field  appearance="fill">
+    <mat-label>No of Actual Copies</mat-label>
+    <input matInput type="text" formControlName="no_of_actual_copies"/><br>
+    <mat-error *ngIf="book.controls['no_of_actual_copies'].hasError('required')">
+      No of Actual copies is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="book.controls['no_of_actual_copies'].errors?.maxlength">
+      Maximun Length is <strong>4</strong>
+    </mat-error>
+    <mat-error *ngIf="book.get('no_of_actual_copies').errors?.pattern">
+      Required <strong>numbers</strong> only
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field  appearance="fill">
+    <mat-label>No Of Current Copies</mat-label>
+    <input matInput type="text" formControlName="no_of_cuurent_copies"/><br>
+    <mat-error *ngIf="book.controls['no_of_cuurent_copies'].hasError('required')">
+      No of Current copies is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="book.controls['no_of_cuurent_copies'].errors?.maxlength">
+      Maximun Length is <strong>2</strong>
+    </mat-error>
+    <mat-error *ngIf="book.get('no_of_cuurent_copies').errors?.pattern">
+      Required <strong>numbers</strong> only
+    </mat-error>
+  </mat-form-field>
+  <br><br><br><br>
+  <button mat-button>submit</button>
+</form>
+</li>
+<li>
+  <div>
+    <img src="../../assets/girl-book-female-free-image-on-pixabay-woman-reading-book-png-509_720.png" width="250" height="400"/>
+  </div>
+</li>
+</ul>
+</div>
+</body>
