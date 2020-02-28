@@ -17,4 +17,7 @@ export class DataService {
   putBooks(formg: FormGroup){
     return this.http.post('http://127.0.0.1:8000/books/', formg.value).toPromise();
   }
+  getBorrowedBooks(){
+    return this.http.get<BookData[]>('http://127.0.0.1:8000/borrower/');
+  }
 }

@@ -1,0 +1,47 @@
+.example-container{
+    background-color: white;
+    height: 296px;
+    width: auto;
+    overflow-y: scroll;
+  }
+  ::ng-deep .lion .mat-form-field-underline {
+    display: none;
+  }
+  .mat-paginator{
+    position: sticky;
+    width: 100%;
+  }
+  tr.row-el:hover{
+    background: #777;
+  }
+  input {
+    font-size: 1em;
+    background: white;
+    padding: 3px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  body{
+    overflow-wrap: normal;
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  td, th {
+    width: 25%;
+  }
+  
+  li.mat-but{
+    float: left;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+  }

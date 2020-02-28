@@ -16,9 +16,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
+import { BorrowerComponent } from './borrower/borrower.component';
 
 const appRoutes: Routes = [
   { path: 'component', component: GetCompComponent  },
+  { path: 'borrower', component: BorrowerComponent},
 ];
 
 @NgModule({
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
     AppComponent,
     GetCompComponent,
     FormcompComponent,
+    BorrowerComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -1,0 +1,50 @@
+<body>
+    <h1>Borrowed Books</h1>
+    <ul>
+      <li class="mat-but">
+        return
+        <!-- <a mat-raised-button (click)="openDialog()">Return Book</a> -->
+      </li>
+      <li class="mat-but">
+        Borrow
+        <!-- <a mat-raised-button (click)="openDialog()">Borrow Book</a> -->
+      </li>
+    </ul>
+    <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="bookSource" matSort>
+          <!-- ISBN Column -->
+          <ng-container matColumnDef="borrower_id">
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header> Borrower Id </th>
+            <td mat-cell *matCellDef="let row"> {{row.borrower_id}} </td>
+          </ng-container>
+      
+          <!-- Book_name Column -->
+          <ng-container matColumnDef="from_date">
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header> From Date </th>
+            <td mat-cell *matCellDef="let row"> {{row.from_date}} </td>
+          </ng-container>
+      
+          <!-- Author Column -->
+          <ng-container matColumnDef="to_date">
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header> To Date </th>
+            <td mat-cell *matCellDef="let row"> {{row.to_date}} </td>
+          </ng-container>
+      
+          <!-- actual copies Column -->
+          <ng-container matColumnDef="return_date">
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header> Return Date </th>
+            <td mat-cell *matCellDef="let row" > {{row.return_date}} </td>
+          </ng-container>
+    
+          <!-- current copies Column -->
+          <ng-container matColumnDef="isbn">
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header> ISBN </th>
+            <td mat-cell *matCellDef="let row"> {{row.isbn}} </td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div> 
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</body>

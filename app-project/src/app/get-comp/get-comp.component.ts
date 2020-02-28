@@ -1,12 +1,11 @@
 import { Component ,OnInit , ViewChild} from '@angular/core';
 import { DataService } from '../data.service';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource} from '@angular/material/table';
 import { BookData } from './BookData';
-import {MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { FormcompComponent } from '../formcomp/formcomp.component';
 import { MatPaginator } from '@angular/material/paginator'; 
-import {MatSort} from '@angular/material/sort';
-
+import { MatSort} from '@angular/material/sort';
 @Component({
   selector: 'app-get-comp',
   templateUrl: './get-comp.component.html',
